@@ -5,13 +5,11 @@ using namespace std;
 int n, select, kol_ser = 0, ser, kontr_sum;
 
 int main() {
-    cout << "insert number!" << endl;
+    cout << "Hello" << endl << "insert number!" << endl;
     cin >> n;
     stack<int> stk;
-    cout
-            << "Please, select:" << endl << "1- Insert data in stack (increase)" << endl
-            << "2- Insert data in stack (decrease)" << endl
-            << "3- Insert data in stack (random)" << endl;
+    cout << "Please, select:" << endl << "1- Insert data in stack (increase)" << endl
+         << "2- Insert data in stack (decrease)" << endl << "3- Insert data in stack (random)" << endl;
     cin >> select;
     switch (select) {
         case 1://заполнение по возрастанию
@@ -19,6 +17,7 @@ int main() {
             for (int i = 0; i < n; i++) {
                 stk.push(i);
                 kontr_sum += stk.top();
+                cout << stk.top() << "   ";
             }
             break;
         case 2://заполнение по убыванию
@@ -33,22 +32,22 @@ int main() {
             cout << "Start random" << endl;
             for (int i = 0; i < n; i++) {
                 stk.push(rand() % 100);
-                cout << stk.top() << endl;
                 kontr_sum += stk.top();
+                cout << stk.top() << "   ";
             }
             break;
         default:
             cout << endl << "write correct number!";
             break;
     }
-    cout << endl << "4- Print stack" << endl << "5- Count control sum" << endl
+    cout << endl << "Please, select:" << endl << "4- Print stack" << endl << "5- Count control sum" << endl
          << "6- Count series" << endl;
     cin >> select;
     switch (select) {
         case 4://вывод
             cout << "Output data" << endl;
             for (int i = 0; i < n; i++) {
-                cout << stk.top();
+                cout << stk.top() << "   ";
                 stk.pop();
             }
             break;
