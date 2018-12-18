@@ -2,7 +2,7 @@
 #include <stack>
 
 using namespace std;
-int n, select, kol_ser = 0, ser, kontr_sum;
+int n, select, kol_ser = 0, ser1 = 0, ser2 = 0, kontr_sum;
 
 int main() {
     cout << "Hello" << endl << "insert number!" << endl;
@@ -55,12 +55,13 @@ int main() {
             printf("\nCount control sum:%d\n", kontr_sum);
             break;
         case 6://подсчет количества серий
-            ser = 0;//not work!!!!!!!!!!!
+            kol_ser = 0;
             for (int i = 1; i < n; i++) {
-                ser = stk.top();
-//                if (stk[i - 1] != stk[i])
-//                    kol_ser++;
-//                stk.pop();
+                ser1 = stk.top();
+                stk.pop();
+                ser2 = stk.top();
+                if (ser2 != (ser1 + 1))
+                    kol_ser++;
             }
             printf("\nCount series:%d\n", kol_ser);
             break;
