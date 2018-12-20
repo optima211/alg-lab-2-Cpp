@@ -3,13 +3,13 @@
 
 using namespace std;
 int n, select, kol_ser = 0, ser1 = 0, ser2 = 0, sum, ifs, m;
-int *A = new int[100];
+int *A = new int[99999999];
 
 void Merge(int *A, int first, int last) {
     ifs = 0;
     m = 0;
     int middle, start, final, j;
-    int *mas = new int[100];
+    int *mas = new int[99999999];
     middle = (first + last) / 2; //вычисление среднего элемента
     start = first; //начало левой части
     final = middle + 1; //начало правой части
@@ -42,7 +42,7 @@ void MergeSort(int *A, int first, int last) {
 };
 
 int main() {
-    cout << "Hello" << endl << "insert number!" << endl;
+    cout << "Hello!" << endl << "enter the number of elements!" << endl;
     cin >> n;
     stack<int> stk;
     cout << "Please, select:" << endl << "1- Insert data in stack (increase)" << endl
@@ -79,7 +79,7 @@ int main() {
             return 0;
     }
     cout << endl << "\nPlease, select:" << endl << "4- Print stack" << endl << "5- Count control sum" << endl
-         << "6- Count series" << endl;
+         << "6- Count series" << endl << "or any for exit" << endl;
     cin >> select;
     switch (select) {
         case 4://вывод
@@ -108,7 +108,7 @@ int main() {
             system("PAUSE");
             return 0;
     }
-    cout << endl << "\nwrite <7> for start sort procedure:\n";
+    cout << endl << "\nwrite <7> for start sort procedure or any for exit:\n";
     cin >> select;
     switch (select) {
         case 7:
@@ -117,6 +117,7 @@ int main() {
                 stk.pop();
             }
             for (int i = 1; i <= n; i++) cout << A[i] << " ";
+            cout << "\n\ndon't worry, the program sorts! don't kill the process!\n";
             MergeSort(A, 1, n); //вызов сортирующей процедуры
             cout << "\n\noutput sorted massive: \n"; //вывод упорядоченного массива
             for (int i = 1; i <= n; i++) {
@@ -129,15 +130,15 @@ int main() {
                 for (int i = 1; i <= n; i++) {
                     cout << A[i] << " ";
                 }
-                cout << "if's" << ifs << endl;
-                cout << "permutation's" << m << endl;
+                cout << "\nif's = " << ifs << endl;
+                cout << "permutation's = " << m << endl;
             }
             if (select == 2) {
                 for (int i = n; i > 0; i--) {
                     cout << A[i] << " ";
                 }
-                cout << "if's" << ifs << endl;
-                cout << "permutation's" << m << endl;
+                cout << "\nif's = " << ifs << endl;
+                cout << "permutation's = " << m << endl;
             }
             break;
         default:
