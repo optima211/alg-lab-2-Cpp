@@ -42,8 +42,13 @@ void MergeSort(int *A, int first, int last) {
 };
 
 int main() {
-    cout << "Hello!" << endl << "enter the number of elements!" << endl;
+    cout << "Hello!" << endl << "enter the number of elements:" << endl;
     cin >> n;
+    if (n > 99999999) {
+        cout << "You number is very big!\nEnter new number!" << endl;
+        system("PAUSE");
+        return 0;
+    }
     stack<int> stk;
     cout << "Please, select:" << endl << "1- Insert data in stack (increase)" << endl
          << "2- Insert data in stack (decrease)" << endl << "3- Insert data in stack (random)" << endl;
@@ -140,6 +145,12 @@ int main() {
                 cout << "\nif's = " << ifs << endl;
                 cout << "permutation's = " << m << endl;
             }
+            else{
+                cout << "enter correct number!" << endl;
+                system("PAUSE");
+                return 0;
+            }
+
             break;
         default:
             cout << endl << "\nwrite correct number!\n";
