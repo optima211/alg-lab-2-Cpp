@@ -145,7 +145,7 @@ int main() {
                 cout << "\nif's = " << ifs << endl;
                 cout << "permutation's = " << m << endl;
             }
-            else{
+            if ((select != 1) && (select != 2)) {
                 cout << "enter correct number!" << endl;
                 system("PAUSE");
                 return 0;
