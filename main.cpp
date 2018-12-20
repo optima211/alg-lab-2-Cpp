@@ -2,10 +2,12 @@
 #include <stack>
 
 using namespace std;
-int n, select, kol_ser = 0, ser1 = 0, ser2 = 0, sum;
+int n, select, kol_ser = 0, ser1 = 0, ser2 = 0, sum, ifs, m;
 int *A = new int[100];
 
 void Merge(int *A, int first, int last) {
+    ifs = 0;
+    m = 0;
     int middle, start, final, j;
     int *mas = new int[100];
     middle = (first + last) / 2; //вычисление среднего элемента
@@ -15,9 +17,13 @@ void Merge(int *A, int first, int last) {
         if ((start <= middle) && ((final > last) || (A[start] < A[final]))) {
             mas[j] = A[start];
             start++;
+            ifs++;
+            m++;
         } else {
             mas[j] = A[final];
             final++;
+            ifs++;
+            m++;
         }
 //возвращение результата в список
     for (j = first; j <= last; j++) A[j] = mas[j];
@@ -123,11 +129,15 @@ int main() {
                 for (int i = 1; i <= n; i++) {
                     cout << A[i] << " ";
                 }
+                cout << "if's" << ifs << endl;
+                cout << "permutation's" << m << endl;
             }
             if (select == 2) {
                 for (int i = n; i > 0; i--) {
                     cout << A[i] << " ";
                 }
+                cout << "if's" << ifs << endl;
+                cout << "permutation's" << m << endl;
             }
             break;
         default:
