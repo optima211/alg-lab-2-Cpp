@@ -44,7 +44,7 @@ void MergeSort(int *A, int first, int last) {
 int main() {
     cout << "Hello!" << endl << "enter the number of elements:" << endl;
     cin >> n;
-    if ((n > 99999999)||(n<=0)) {
+    if (n > 99999999) {
         cout << "You number is very big!\nEnter new number!" << endl;
         system("PAUSE");
         return 0;
